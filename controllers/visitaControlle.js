@@ -30,7 +30,7 @@ exports.getOneVisita = async (req, res) => {
         // Obtener el ID del usuario que se desea eliminar desde los parámetros de la solicitud (puedes usar req.params o req.body según cómo envíes el ID)
         const _idU = req.params.id; 
         // Verificar si el usuario existe antes de eliminarlo
-        const user = await User.findOne({_id:_idU});
+        const user = await User.findOne({Uid:_idU});
         if (!user) {
             return res.status(404).json({ error: 'Usuario no encontrado' });
         }
